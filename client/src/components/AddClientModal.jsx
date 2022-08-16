@@ -16,14 +16,21 @@ export const AddClientModal = () => {
       const { clients } = cache.readQuery({ query: GET_CLIENTS });
       cache.writeQuery({
         query: GET_CLIENTS,
-        data: { clients: clients.concat([addClient]) },
+        data: { clients: [...clients, addClient] },
       });
     },
   });
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(name, email, phone);
+    // console.log(name, email, phone);
+    if (name === "" || email === "" || phone === "") {
+      return alert("Please fill in all fields");
+    }
+    addClient(name, email, phone);
+    setName("");
+    setEmail("");
+    setPhone("");
   };
 
   return (
