@@ -2,8 +2,8 @@
 
 <h2>MERN Stack - Project Managment APP</h2>
 
-<h5>Built in:</h5>
-<h6>FrontEnd</h6>
+<h4>Built in:</h4>
+<h4>FrontEnd</h4>
 <ul>
 <li>React.js</li>
 <li>Bootstrap</li>
@@ -12,7 +12,7 @@
 <li>React Icons</li>
 </ul>
 
-<h6>BackEnd</h6>
+<h4>BackEnd</h4>
 <ul>
 <li>Node.js</i>
 <li>Express.js</li>
