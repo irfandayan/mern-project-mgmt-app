@@ -1,4 +1,4 @@
-import { FaEnvelope, FaPhone, FaIDBadge, FaIdBadge } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaIdBadge } from "react-icons/fa";
 
 export const ClientInfo = ({ client }) => {
   return (
