@@ -1,10 +1,10 @@
-import { Link, useParams } from "react-router-dom";
-import Spinner from "../components/Spinner";
-import { useQuery } from "@apollo/client";
-import { GET_PROJECT } from "../queries/projectQueries";
-import { ClientInfo } from "../components/ClientInfo";
-import { DeleteProjectButton } from "../components/DeleteProjectButton";
-import { EditProjectButton } from "../components/EditProjectButton";
+import { Link, useParams } from 'react-router-dom';
+import Spinner from '../components/Spinner';
+import { useQuery } from '@apollo/client';
+import { GET_PROJECT } from '../GraphQL/queries/projectQueries';
+import { ClientInfo } from '../components/ClientInfo';
+import { DeleteProjectButton } from '../components/DeleteProjectButton';
+import { EditProjectButton } from '../components/EditProjectButton';
 
 export const Project = () => {
   const { id } = useParams();

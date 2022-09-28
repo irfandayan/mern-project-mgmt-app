@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { useMutation } from "@apollo/client";
-import { GET_PROJECT } from "../queries/projectQueries";
-import { UPDATE_PROJECT } from "../mutations/projectMutations";
+import { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { GET_PROJECT } from '../GraphQL/queries/projectQueries';
+import { UPDATE_PROJECT } from '../GraphQL/mutations/projectMutations';
 
 export const EditProjectButton = ({ project }) => {
   const [name, setName] = useState(project.name);
   const [description, setDescription] = useState(project.description);
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState('');
 
   const [updateProject] = useMutation(UPDATE_PROJECT, {
     variables: { id: project.id, name, description, status },
@@ -17,7 +17,7 @@ export const EditProjectButton = ({ project }) => {
     e.preventDefault();
 
     if (!name || !description || !status) {
-      return alert("Please fill out all fields");
+      return alert('Please fill out all fields');
     }
     updateProject(name, description, status);
   };

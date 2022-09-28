@@ -1,7 +1,7 @@
-import { useQuery } from "@apollo/client";
-import Spinner from "./Spinner";
-import { GET_CLIENTS } from "../queries/clientQueries";
-import ClientRow from "./ClientRow";
+import { useQuery } from '@apollo/client';
+import Spinner from './Spinner';
+import { GET_CLIENTS } from '../GraphQL/queries/clientQueries';
+import ClientRow from './ClientRow';
 
 const Clients = () => {
   const { loading, error, data } = useQuery(GET_CLIENTS);

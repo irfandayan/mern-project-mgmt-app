@@ -1,16 +1,16 @@
-import React from "react";
-import { useState } from "react";
-import { FaList } from "react-icons/fa";
-import { useMutation, useQuery } from "@apollo/client";
-import { ADD_PROJECT } from "../mutations/projectMutations";
-import { GET_PROJECTS } from "../queries/projectQueries";
-import { GET_CLIENTS } from "../queries/clientQueries";
+import React from 'react';
+import { useState } from 'react';
+import { FaList } from 'react-icons/fa';
+import { useMutation, useQuery } from '@apollo/client';
+import { ADD_PROJECT } from '../GraphQL/mutations/projectMutations';
+import { GET_PROJECTS } from '../GraphQL/queries/projectQueries';
+import { GET_CLIENTS } from '../GraphQL/queries/clientQueries';
 
 export const AddProjectModal = () => {
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [clientId, setClientId] = useState("");
-  const [status, setStatus] = useState("new");
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [clientId, setClientId] = useState('');
+  const [status, setStatus] = useState('new');
 
   const [addProject] = useMutation(ADD_PROJECT, {
     variables: { name, description, clientId, status },
@@ -29,16 +29,16 @@ export const AddProjectModal = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     // console.log(name, email, phone);
-    if (name === "" || description === "" || status === "") {
-      return alert("Please fill in all fields");
+    if (name === '' || description === '' || status === '') {
+      return alert('Please fill in all fields');
     }
 
     addProject(name, description, clientId, status);
 
-    setName("");
-    setDescription("");
-    setStatus("new");
-    setClientId("");
+    setName('');
+    setDescription('');
+    setStatus('new');
+    setClientId('');
   };
 
   if (loading) return null;
